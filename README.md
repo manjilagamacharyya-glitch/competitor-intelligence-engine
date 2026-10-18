@@ -80,18 +80,37 @@ When `BLOB_READ_WRITE_TOKEN` is configured, the original upload is stored privat
 ## Project structure
 
 ```text
-app/
-  api/datasets/analyze/  Gemini dataset analysis endpoint
-  api/datasets/upload/   Dataset validation and optional Blob upload
-  sign-in/               Demo sign-in route
-  sign-up/               Demo sign-up route
-  layout.tsx             App layout and page metadata
-  page.tsx               Dashboard entry point
-  providers.tsx          Fluent UI providers and theme state
-components/
-  competitor-dashboard.tsx  Main workspace and sample dashboard data
-  dataset-workspace.tsx     Upload and analysis experience
-  demo-auth-form.tsx        Non-persistent demo authentication UI
+competitor-intelligence-engine/
+├── app/
+│   ├── api/
+│   │   └── datasets/
+│   │       ├── analyze/
+│   │       │   └── route.ts       # Gemini dataset analysis endpoint
+│   │       └── upload/
+│   │           └── route.ts       # Dataset validation and optional Blob upload
+│   ├── sign-in/
+│   │   └── page.tsx               # Demo sign-in route
+│   ├── sign-up/
+│   │   └── page.tsx               # Demo sign-up route
+│   ├── globals.css                # Minimal global styles
+│   ├── layout.tsx                 # App layout and page metadata
+│   ├── page.tsx                   # Dashboard entry point
+│   └── providers.tsx              # Fluent UI providers and theme state
+├── components/
+│   ├── competitor-dashboard.tsx   # Main workspace and sample dashboard data
+│   ├── dataset-workspace.tsx      # Dataset upload and analysis experience
+│   ├── demo-auth-form.tsx         # Non-persistent demo authentication UI
+│   └── starter-page.tsx           # Fluent UI starter/demo page
+├── .env.example                   # Environment variable template
+├── .gitignore
+├── .npmrc                         # pnpm package-manager settings
+├── next-env.d.ts                  # Next.js TypeScript declarations
+├── next.config.mjs                # Next.js configuration
+├── package.json
+├── pnpm-lock.yaml
+├── pnpm-workspace.yaml
+├── README.md
+└── tsconfig.json
 ```
 
 ## Tech stack
